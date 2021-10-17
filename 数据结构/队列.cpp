@@ -13,17 +13,16 @@ struct LinkQueue
     QueuePtr rear;
 };
 
-void QInit(LinkQueue &q)
+bool QInit(LinkQueue &q)
 {
     q.front = q.rear = (QueuePtr)malloc(sizeof(QNode));
     q.front->Next = NULL;
+    return true;
 }
 
 bool QEmpty(LinkQueue q)
 {
-    if (q.front == q.rear)
-        return true;
-    return false;
+    return (q.front == q.rear);
 }
 
 int QLength(LinkQueue q)
@@ -46,17 +45,20 @@ bool QHead(LinkQueue q, int &n)
     return true;
 }
 
-void QEn(LinkQueue &q, int n)
+bool QEn(LinkQueue &q, int n)
 {
     // q.rear->Next = (QueuePtr)malloc(sizeof(QNode));
     // q.rear = q.rear->Next;
     // q.rear->Data = n;
     // q.rear->Next = NULL;
     QueuePtr p = (QueuePtr)malloc(sizeof(QNode));
+    if (!p)
+        return false;
     p->Data = n;
     p->Next = NULL;
     q.rear->Next = p;
     q.rear = p;
+    return true;
 }
 
 bool QDe(LinkQueue &q, int &n)
@@ -115,7 +117,7 @@ void QPrint(LinkQueue q)
     }
     else
     {
-        cout << "队列为空!" << endl;
+        cout << "队列为空！" << endl;
         return;
     }
     while (p)
