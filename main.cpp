@@ -6,5 +6,6 @@ int main()
 	string n;
 	cin >> n;
 	cout << "Hello world, " << n << "!" << endl;
+	cout << "Hello, Github!" << endl;
 	return 0;
 }
