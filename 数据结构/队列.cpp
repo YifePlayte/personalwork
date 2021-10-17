@@ -63,25 +63,46 @@ bool QDe(LinkQueue &q, int &n)
 {
     if (QEmpty(q))
         return false;
-        QueuePtr p = q.front->Next;
-        if(p == q.rear)
+    QueuePtr p = q.front->Next;
+    if (p == q.rear)
         q.rear = q.front;
-        q.front->Next = p->Next;
-        n = p->Data;
-        free(p);
-        return true;
+    q.front->Next = p->Next;
+    n = p->Data;
+    free(p);
+    return true;
 }
 
 bool QDe(LinkQueue &q)
 {
     if (QEmpty(q))
         return false;
-        QueuePtr p = q.front->Next;
-        if(p == q.rear)
+    QueuePtr p = q.front->Next;
+    if (p == q.rear)
         q.rear = q.front;
-        q.front->Next = p->Next;
-        free(p);
-        return true;
+    q.front->Next = p->Next;
+    free(p);
+    return true;
+}
+
+bool QDe2(LinkQueue &q, int &n)
+{
+    if (QEmpty(q))
+        return false;
+    QueuePtr p = q.front;
+    q.front = q.front->Next;
+    n = p->Data;
+    free(p);
+    return true;
+}
+
+bool QDe2(LinkQueue &q)
+{
+    if (QEmpty(q))
+        return false;
+    QueuePtr p = q.front;
+    q.front = q.front->Next;
+    free(p);
+    return true;
 }
 
 void QPrint(LinkQueue q)
