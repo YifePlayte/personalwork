@@ -48,10 +48,15 @@ bool QHead(LinkQueue q, int &n)
 
 void QEn(LinkQueue &q, int n)
 {
-    q.rear->Next = (QueuePtr)malloc(sizeof(QNode));
-    q.rear = q.rear->Next;
-    q.rear->Data = n;
-    q.rear->Next = NULL;
+    // q.rear->Next = (QueuePtr)malloc(sizeof(QNode));
+    // q.rear = q.rear->Next;
+    // q.rear->Data = n;
+    // q.rear->Next = NULL;
+    QueuePtr p = (QueuePtr)malloc(sizeof(QNode));
+    p->Data = n;
+    p->Next = NULL;
+    q.rear->Next = p;
+    q.rear = p;
 }
 
 bool QDe(LinkQueue &q, int &n)
