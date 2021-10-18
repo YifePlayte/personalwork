@@ -42,7 +42,7 @@ bool SEmpty(Stack S)
 		return true;
 }
 
-int main()
+int main() //十进制转八进制 
 {
 	int m, n;
 	bool neg = false;
