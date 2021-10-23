@@ -7,11 +7,11 @@ typedef struct SNode
 	SNode *Next;
 } SNode, *Stack;
 
-Stack SNew()
+bool SInit(Stack &S)
 {
-	Stack S = (Stack)malloc(sizeof(SNode));
+	S = (Stack)malloc(sizeof(SNode));
 	S->Next = NULL;
-	return S;
+	return true;
 }
 
 bool SEmpty(Stack S)
@@ -42,7 +42,7 @@ bool SPop(Stack &S)
 	return true;
 }
 
-bool SPop(Stack &S, int n)
+bool SPop(Stack &S, int &n)
 {
 	if(SEmpty(S))
 		return false;
@@ -61,7 +61,8 @@ int main() //十进制转八进制
 	n = abs(m);
 	if (m < 0)
 		neg = true;
-	Stack S = SNew();
+	Stack S;
+	SInit(S);
 	while (n != 0)
 	{
 		SPush(S, n % 8);
