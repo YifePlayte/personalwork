@@ -60,7 +60,7 @@ int main()
     char n;
     Stack s;
     SInit(s);
-    while (~scanf("%c", &n))
+    while (cin >> n)
     {
         SPush(s, n);
     }
