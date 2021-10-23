@@ -14,6 +14,11 @@ Stack SNew()
 	return S;
 }
 
+bool SEmpty(Stack S)
+{
+	return (S->Next == NULL);
+}
+
 void SPush(Stack &S, int n)
 {
 	Stack p = S->Next;
@@ -27,19 +32,25 @@ int STop(Stack S)
 	return S->Next->Data;
 }
 
-void SPop(Stack &S)
+bool SPop(Stack &S)
 {
+	if(SEmpty(S))
+		return false;
 	Stack p = S->Next;
 	S->Next = p->Next;
 	free(p);
+	return true;
 }
 
-bool SEmpty(Stack S)
+bool SPop(Stack &S, int n)
 {
-	if (S->Next)
+	if(SEmpty(S))
 		return false;
-	else
-		return true;
+	Stack p = S->Next;
+	S->Next = p->Next;
+	n = p->Data;
+	free(p);
+	return true;
 }
 
 int main() //十进制转八进制 
