@@ -194,7 +194,7 @@ void ListSearch(LinkList L, int Locate)
         p = p->Next;
         if (!p)
         {
-            printf("位置不合法，无法删除！\n");
+            printf("位置不合法！\n");
             return;
         }
     }
