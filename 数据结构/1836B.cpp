@@ -20,17 +20,6 @@ bool SqLInit(SqList &L)
     return true;
 }
 
-bool SqLIns_C(SqList &L, int Pos, int n)
-{
-    if ((Pos > (L.Length + 1)) || (L.Length >= MAXLENGTH))
-        return false;
-    for (int i = L.Length; i >= Pos; i--)
-        L.Data[i] = L.Data[i - 1];
-    L.Data[Pos - 1] = n;
-    L.Length++;
-    return true;
-}
-
 bool SqLIns_L(SqList &L, int n)
 {
     if (L.Length >= MAXLENGTH)
@@ -42,39 +31,12 @@ bool SqLIns_L(SqList &L, int n)
     return true;
 }
 
-bool SqLIns_R(SqList &L, int n)
-{
-    if (L.Length >= MAXLENGTH)
-        return false;
-    L.Data[L.Length] = n;
-    L.Length++;
-    return true;
-}
-
-bool SqLDel_C(SqList &L, int Pos)
-{
-    if (L.Length < 1 || Pos > L.Length)
-        return false;
-    for (int i = Pos; i < L.Length; i++)
-        L.Data[i - 1] = L.Data[i];
-    L.Length--;
-    return true;
-}
-
 bool SqLDel_L(SqList &L)
 {
     if (L.Length < 1)
         return false;
     for (int i = 1; i < L.Length; i++)
         L.Data[i - 1] = L.Data[i];
-    L.Length--;
-    return true;
-}
-
-bool SqLDel_R(SqList &L)
-{
-    if (L.Length < 1)
-        return false;
     L.Length--;
     return true;
 }
@@ -94,6 +56,8 @@ bool SqLSearch(SqList L, int n, int &ans)
 
 int main()
 {
+    freopen("input.txt", "rb+", stdin);
+    freopen("output.txt", "wb+", stdout);
     int n;
     SqList l;
     SqLInit(l);
