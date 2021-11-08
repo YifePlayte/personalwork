@@ -36,7 +36,7 @@ void BCSIn(BCString &S)
     memset(cache, 0, sizeof(char) * NLENGTH);
     while (~scanf("%c", &n))
     {
-        if(n == '\n')
+        if (n == '\n')
         {
             break;
         }
@@ -78,11 +78,12 @@ int BCSLength(BCString &S)
     while (p->Next)
     {
         p = p->Next;
-        for(int i = 0; i < NLENGTH; i ++)
+        for (int i = 0; i < NLENGTH; i++)
         {
-            if(p->Data[i])
-            n ++;
-            else return n;
+            if (p->Data[i])
+                n++;
+            else
+                return n;
         }
     }
     return n;
@@ -90,8 +91,8 @@ int BCSLength(BCString &S)
 
 int main()
 {
-    // freopen("input.txt", "rb+", stdin);
-    // freopen("output.txt", "wb+", stdout);
+    freopen("input.txt", "rb+", stdin);
+    freopen("output.txt", "wb+", stdout);
     BCString S;
     BCSInit(S);
     BCSIn(S);
