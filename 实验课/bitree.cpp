@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef struct Node
+typedef struct TNode
 {
     int Data;
-    struct Node *LChild, *RChild;
-} *Tree, TNode;
+    struct TNode *LChild, *RChild;
+} TNode, *Tree;
 
 void TreeCreate(Tree &T)
 {
@@ -73,36 +73,60 @@ void TLeafNum(Tree T, int &num)
     }
 }
 
-void TDepth(Tree T, int &num, int depth = 0)
+int TDepth(Tree T)
 {
-    if (T)
+    if (!T)
+        return 0;
+    else
     {
-        depth++;
-        num = max(num, depth);
-        TDepth(T->LChild, num, depth);
-        TDepth(T->RChild, num, depth);
+        return 1 + max(TDepth(T->LChild), TDepth(T->RChild));
     }
+}
+
+Tree TGetNode(int Data, Tree LChild, Tree RChild)
+{
+    TNode *T;
+    T = (TNode *)malloc(sizeof(TNode));
+    T->Data = Data;
+    T->LChild = LChild;
+    T->RChild = RChild;
+    return T;
+}
+
+Tree TCopy(Tree T) //8--19:30??
+{
+    if (!T)
+        return NULL;
+    return TGetNode(T->Data, TCopy(T->LChild), TCopy(T->RChild));
 }
 
 int main()
 {
-    Tree T;
+    freopen("input.txt", "rb+", stdin);
+    freopen("output.txt", "wb+", stdout);
+    Tree T, T2;
     printf("输入先序遍历输入\n");
     TreeCreate(T);
-    printf("前序遍历结果:\n");
+    printf("先序遍历结果:\n");
     TPreOrder(T);
     printf("\n中序遍历结果:\n");
     TInOrder(T);
     printf("\n后序遍历结果:\n");
     TLastOrder(T);
+    T2 = TCopy(T);
+    printf("\n已复制树！\n");
+    printf("先序遍历结果:\n");
+    TPreOrder(T2);
+    printf("\n中序遍历结果:\n");
+    TInOrder(T2);
+    printf("\n后序遍历结果:\n");
+    TLastOrder(T2);
     int num = 0;
     TNodeNum(T, num);
     printf("\n节点数:\n%d", num);
     num = 0;
     TLeafNum(T, num);
     printf("\n叶子数:\n%d", num);
-    num = 0;
-    TDepth(T, num);
-    printf("\n深度:\n%d", num);
+    printf("\n深度:\n%d", TDepth(T));
     return 0;
 }
