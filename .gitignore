@@ -1,6 +1,6 @@
 **/input.txt
 **/output.txt
 **/*.exe
+**/bin/*
 main.cpp
-bin/main
-*.o
+**/*.o
