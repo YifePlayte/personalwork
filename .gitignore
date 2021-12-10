@@ -3,3 +3,4 @@
 **/*.exe
 main.cpp
 bin/main
+*.o
