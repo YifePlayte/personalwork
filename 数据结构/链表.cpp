@@ -7,6 +7,13 @@ typedef struct LNode
     LNode *Next;
 } LNode, *LinkList;
 
+void ListInit(LinkList &L)
+{
+    L = (LinkList)malloc(sizeof(LNode));
+    L->Next = NULL;
+    return;
+}
+
 void ListIns_L(LinkList &L)
 {
     LinkList p = L->Next;
@@ -120,7 +127,7 @@ void ListPrint(LinkList L)
         printf("\n");
     }
     else
-        printf("链表为空！\n");
+        printf("Empty!\n");
 }
 
 void ListCreate_L(LinkList &L, int Length)
