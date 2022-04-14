@@ -4,3 +4,4 @@
 **/bin/*
 main.cpp
 **/*.o
+**/*.class
