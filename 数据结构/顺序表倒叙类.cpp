@@ -16,7 +16,7 @@ public:
 void sql::reverse()
 {
     int c;
-    for(int i = 0; i < (length - 1) / 2; i ++)
+    for (int i = 0; i < (length - 1) / 2; i ++)
     {
         c = data[i];
         data[i] = data[length - 1 - i];
@@ -27,7 +27,7 @@ void sql::reverse()
 void sql::input()
 {
     scanf("%d", &length);
-    for(int i = 0; i < length; i ++)
+    for (int i = 0; i < length; i ++)
     {
         scanf("%d", &data[i]);
     }
@@ -35,13 +35,13 @@ void sql::input()
 
 void sql::print()
 {
-    if(length == 0)
+    if (length == 0)
     {
         printf("sql is empty!\n");
         return;
     }
     printf("%d", data[0]);
-    for(int i = 1; i < length; i ++)
+    for (int i = 1; i < length; i ++)
     {
         printf(" %d", data[i]);
     }

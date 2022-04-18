@@ -90,7 +90,7 @@ int main()
     cout << "请输入队列长度：" << endl;
     cin >> n;
     cout << "请输入队列：" << endl;
-    while(n)
+    while (n)
     {
         cin >> d;
         SqQEn(Q, d);
@@ -122,7 +122,7 @@ int main()
     cout << "请输入队列长度：" << endl;
     cin >> n;
     cout << "请输入队列：" << endl;
-    while(n)
+    while (n)
     {
         cin >> d;
         SqQEn(Q, d);

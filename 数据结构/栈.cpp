@@ -34,7 +34,7 @@ int STop(Stack S)
 
 bool SPop(Stack &S)
 {
-	if(SEmpty(S))
+	if (SEmpty(S))
 		return false;
 	Stack p = S->Next;
 	S->Next = p->Next;
@@ -44,7 +44,7 @@ bool SPop(Stack &S)
 
 bool SPop(Stack &S, int &n)
 {
-	if(SEmpty(S))
+	if (SEmpty(S))
 		return false;
 	Stack p = S->Next;
 	S->Next = p->Next;
@@ -53,7 +53,7 @@ bool SPop(Stack &S, int &n)
 	return true;
 }
 
-int main() //十进制转八进制 
+int main() //十进制转八进制
 {
 	int m, n;
 	bool neg = false;

@@ -87,11 +87,11 @@ int main()
 		printf("0");
 	}
 	else
-	printf("%d\n", QLength(Q));
-		while (!QEmpty(Q))
-		{
-			QDe(Q, n);
-			printf("%d", n);
-		}
+		printf("%d\n", QLength(Q));
+	while (!QEmpty(Q))
+	{
+		QDe(Q, n);
+		printf("%d", n);
+	}
 	// printf("\n");
 }

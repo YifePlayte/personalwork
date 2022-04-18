@@ -69,12 +69,12 @@ int main()
     int n;
     LinkList l;
     ListInit(l);
-    while(~scanf("%d", &n))
+    while (~scanf("%d", &n))
     {
         ListIns_L(l, n);
     }
     printf("%d\n", ListLength(l));
-    while(!ListEmpty(l))
+    while (!ListEmpty(l))
     {
         ListSearch(l, 1, n);
         printf("%d", n);

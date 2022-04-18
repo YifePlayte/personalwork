@@ -48,7 +48,7 @@ int SqLLength(SqList L)
 
 bool SqLSearch(SqList L, int n, int &ans)
 {
-    if(n < 1 || n > L.Length)
+    if (n < 1 || n > L.Length)
         return false;
     ans = L.Data[n - 1];
     return true;
@@ -61,7 +61,7 @@ int main()
     int n;
     SqList l;
     SqLInit(l);
-    while(~scanf("%d", &n))
+    while (~scanf("%d", &n))
     {
         SqLIns_L(l, n);
     }
@@ -72,7 +72,7 @@ int main()
     //     SqLIns_L(l, n);
     // }
     printf("%d\n", SqLLength(l));
-    while(!SqLEmpty(l))
+    while (!SqLEmpty(l))
     {
         SqLSearch(l, 1, n);
         printf("%d", n);

@@ -26,7 +26,7 @@ bool SqLIns_R(SqList &L, int n)
 
 void SqLPrint(SqList L)
 {
-    for(int i = 1; i <= L.Length; i ++)
+    for (int i = 1; i <= L.Length; i ++)
     {
         printf("%d ", L.Data[i]);
     }
@@ -57,7 +57,7 @@ int main()
     SqList l;
     int n;
     SqLInit(l);
-    while(~scanf("%d", &n))
+    while (~scanf("%d", &n))
     {
         SqLIns_R(l, n);
     }

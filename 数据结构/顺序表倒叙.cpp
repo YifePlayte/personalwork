@@ -11,7 +11,7 @@ struct sql
 
 int inputsql(sql *sqlinput)
 {
-    for(int i = 0; i < sqlinput->length; i ++)
+    for (int i = 0; i < sqlinput->length; i ++)
     {
         scanf("%d", &(sqlinput->data[i]));
     }
@@ -28,7 +28,7 @@ int reverseint(int *a, int *b)
 
 int reversesql(sql *sqlinput)
 {
-    for(int i = 0; i < (sqlinput->length - 1) / 2; i ++)
+    for (int i = 0; i < (sqlinput->length - 1) / 2; i ++)
     {
         reverseint(&(sqlinput->data[i]), &(sqlinput->data[sqlinput->length - 1 - i]));
     }
@@ -37,13 +37,13 @@ int reversesql(sql *sqlinput)
 
 int printsql(sql *sqloutput)
 {
-    if(sqloutput->length == 0)
+    if (sqloutput->length == 0)
     {
         printf("sql is empty!\n");
         return 0;
     }
     printf("%d", sqloutput->data[0]);
-    for(int i = 1; i < sqloutput->length; i ++)
+    for (int i = 1; i < sqloutput->length; i ++)
     {
         printf(" %d", sqloutput->data[i]);
     }

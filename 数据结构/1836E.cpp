@@ -98,11 +98,11 @@ int main()
     char n;
     LinkQueue q;
     QInit(q);
-    while(cin >> n)
+    while (cin >> n)
     {
         QEn(q, n);
     }
-    while(!QEmpty(q))
+    while (!QEmpty(q))
     {
         QDe(q, n);
         printf("%c", n);
