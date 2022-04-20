@@ -1,3 +1,10 @@
+/****
+运行环境：OpenJDK 1.8
+运行方式，在此目录下开启终端，逐行运行以下命令：
+javac Main.java
+appletviewer Main.java
+****/
+
 import java.applet.*;
 import java.awt.*;
 
