@@ -9,7 +9,7 @@ public class BankOfHRB extends Bank {
 		double yearInterest = super.computerInterest();
 		double dayInterest = day * 0.00012 * savedMoney;
 		interest = yearInterest + dayInterest;
-		System.out.printf("%d元存在建设银行%d年零%d天的利息：%f元\n", savedMoney, super.year, day, interest);
+		System.out.printf("%d元存在哈尔滨银行%d年零%d天的利息：%f元\n", savedMoney, super.year, day, interest);
 		return interest;
 	}
 
